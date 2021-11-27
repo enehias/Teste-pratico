@@ -62,7 +62,6 @@ class VeiculoController extends Controller
             return Success::generic($veiculo,messageSuccess('20001','Veículo'),
                 "web",route("veiculos.listar"));
         }catch (\Exception $e){
-            dd($e->getMessage());
             return Error::generic($e->getMessage(),messageErrors('1001','Veículo'));
         }
     }
