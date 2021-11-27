@@ -6,6 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
+use Illuminate\Support\Facades\Log;
 
 class CustomerNotification extends Notification
 {
@@ -47,6 +48,7 @@ class CustomerNotification extends Notification
      */
     public function toMail($notifiable)
     {
+
         return (new MailMessage)
                                ->from($this->fromEmail, $this->fromName)
                                ->subject($this->subject)

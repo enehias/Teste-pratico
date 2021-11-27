@@ -2,9 +2,11 @@
 
 namespace App\Http\Middleware;
 
+use App\Response\Error;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use Illuminate\Support\Facades\Log;
 
 class PermissionAdmin
 {
@@ -18,11 +20,14 @@ class PermissionAdmin
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        if(Auth::user()->role != User::ROLE_ADMIN) {
 
-            return redirect( '/home');
+
+        if((Auth::user()->role == User::ROLE_ADMIN)||($request->route()->getName()=="veiculos.listar")) {
+            return $next($request);
+
         }
 
-        return $next($request);
+        return Error::generic(null,messageErrors('5004'),
+        "web",'home');
     }
 }

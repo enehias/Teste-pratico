@@ -45,7 +45,7 @@ class LoginController extends Controller
      */
     public function redirectTo()
     {
-        return \Auth::user()->role == User::ROLE_ADMIN ? '/admin/home' : 'home';
+        return '/home';
     }
 
     public function logout(Request $request)
@@ -54,7 +54,7 @@ class LoginController extends Controller
 
         $request->session()->invalidate();
 
-        return redirect($request->is('admin/*') ? '/admin/login' : '/login');
+        return redirect( '/login');
 
     }
 

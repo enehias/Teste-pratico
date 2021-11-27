@@ -10,15 +10,16 @@
 
     <title>{{ config('app.name', 'Federal ST') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
+
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('js/jquery-ui/jquery-ui.css') }}" rel="stylesheet">
+    <link href="{{ asset('js/sweetalert2/sweetalert2.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -34,7 +35,23 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        @auth
+                            @if(isAdmin())
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Veículos <span class="caret"></span>
+                                </a>
+                               <div class="dropdown-menu">
+                                   <a class="dropdown-item" href="{{ route('veiculos.cadastrar') }}">
+                                       Cadastrar  Veículo
+                                   </a>
+                                   <a class="dropdown-item" href="{{ route('veiculos.listar') }}">
+                                       Listar Veículo
+                                   </a>
+                               </div>
+                            </li>
+                            @endif
+                        @endauth
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -72,4 +89,9 @@
         </main>
     </div>
 </body>
+<!-- Scripts -->
+<script src="{{ asset('js/app.js') }}" defer></script>
+<script src="{{ asset('js/jquery/jquery.js') }}" ></script>
+<script src="{{ asset('js/jquery-ui/jquery-ui.js') }}" ></script>
+@includeIf('globals.js.sweetalert2')
 </html>

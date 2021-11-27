@@ -1,5 +1,7 @@
 <?php
 
+use App\User;
+
 function layout()
 {
     return \Request::is('admin/*') ? 'layouts.admin' : 'layouts.app';
@@ -7,7 +9,7 @@ function layout()
 
 function isAdmin()
 {
-    return \Request::is('admin/*') ? true : false;
+    return auth()->user()->role==User::ROLE_ADMIN;
 }
 
 function encodeBase64($texto)
