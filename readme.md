@@ -2,7 +2,9 @@
 
 
 # Teste prático - Federal Soluções Técnicas
-<h3>Desenvolvedor Ricardo Enehias</h3>
+
+###Desenvolvedor Ricardo Enehias
+
 ## Instalação 
 * Execute composer install
 * Renomeie o arquivo .env.example para .env
