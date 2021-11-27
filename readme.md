@@ -2,7 +2,7 @@
 
 
 # Teste prático - Federal Soluções Técnicas
-
+<h3>Desenvolvedor Ricardo Enehias</h3>
 ## Instalação 
 * Execute composer install
 * Renomeie o arquivo .env.example para .env
@@ -10,6 +10,8 @@
 * Execute php artisan key:generate
 * Execute php artisan migrate
 * Execute php artisan db:seed
+*  php artisan vendor:publish --tag=laravel-notifications
+* php artisan vendor:publish --tag=laravel-mail
 
 Esse é o teste prático - Federal Soluções Técnicas.
 `Laravel 5.6` 
@@ -52,22 +54,17 @@ Existem dois tipos diferentes de usuários na aplicação:
 - Usuário
 
 ### Requisitos
-- [ ] Usar Laravel
-- [ ] Usar banco de dados Postgres
-- [ ] Utilizar Soft Deleting ao excluir veículos.
-- [ ] Não ter regra de negócio nos Controllers.
-- [ ] Usar Event e Notifications para enviar os e-mail.
-- [ ] Deixar informações no README.MD sobre como podemos executar sua aplicação.
-- [ ] Usar o github.
+- [X] Usar banco de dados Postgres
+- [X] Utilizar Soft Deleting ao excluir veículos.
+- [X] Não ter regra de negócio nos Controllers.
+- [X] Usar Event e Notifications para enviar os e-mail.
+- [X] Deixar informações no README.MD sobre como podemos executar sua aplicação.
+- [X] Usar o github.
 
 ### Validações
 Os campos abaixo só podem ser aceitos no formato:
-- Placa: Formato com três letras e quatro números (AAA1111).
-- Ano: Formato apenas com números com, no máximo, 4 dígitos.
-
-### Como participar?
-- Fazer o fork desse repositório.
-- Nos enviar o link do projeto do Github.
+- [X] Placa: Formato com três letras e quatro números (AAA1111).
+- [X] Ano: Formato apenas com números com, no máximo, 4 dígitos.
 
 #### Dicas após baixar o projeto:
 - Rode as migrations.
@@ -76,15 +73,9 @@ Os campos abaixo só podem ser aceitos no formato:
 - A senha dos usuários é 'secret'.
 
 # Contato
-- Email: suporte@federalst.com.br
-- Telefone: 62 3414-9089
+- Email: r.enehias@gmail.com
 
-Entre em contato conosco, caso você tenha alguma dúvida ou quando terminar o projeto.
-
-# Tempo de execução
-- Você tem 2 dias pra realizar esse teste prático.
-
-## SUBMETA SEU PROJETO, MESMO QUE VOCÊ NÃO O TERMINE. NESTE CASO, NOS EXPLIQUE QUAIS FORAM AS SUAS DIFICULDADES. 
+Entre em contato conosco, caso você tenha alguma dúvida.
 
 
 
